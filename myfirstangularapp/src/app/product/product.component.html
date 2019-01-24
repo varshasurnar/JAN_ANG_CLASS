@@ -34,7 +34,7 @@
                     <tbody>
                         <tr *ngFor="let prod of products">
                             <td><img [src]="prod.imageUrl" *ngIf="showImg"/></td>
-                            <td>{{prod.productName | uppercase}}</td>
+                            <td>{{prod.productName | myUpper}}</td>
                             <td>{{prod.productCode | lowercase}}</td>
                             <td>{{prod.releaseDate}}</td>
                             <td>{{prod.price | currency}}</td>

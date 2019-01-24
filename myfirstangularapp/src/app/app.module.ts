@@ -5,13 +5,15 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BooksDetails} from './books.component';
 import { ProductComponent } from './product/product.component';
+import { MyPipe } from './product/myupper.pipe';
 
 @NgModule ({
     //All tcoent and pipe
     declarations:[
         AppComponent,
         BooksDetails,
-        ProductComponent
+        ProductComponent,
+        MyPipe
     ],
     //All module
     imports: [
