@@ -1,0 +1,22 @@
+-- 8-Jan-2019
+
+    npm
+    node.js
+    packagr.json
+    npm install
+    // command line gument
+    npm install -g angular.cli
+    ng new myfirstangularapp
+    cd myfirstangularapp
+    npm start
+
+    http://localhost:4200
+
+-- 9-Jan-2019
+Below 5 major building blocks of Angular application:
+
+    Module: this contain declaration
+    Component: this contain all HTML, logics and css
+    Pipe : help to do runtime manupulation
+    Service: do third party connection
+    ROuter : Use for routing

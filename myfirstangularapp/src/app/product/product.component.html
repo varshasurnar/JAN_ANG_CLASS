@@ -1,0 +1,48 @@
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+           {{title}}
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    Filter By:
+                </div>
+                <div class="col-md-5">
+                    <input type="text" placeholder="Enter here" [(ngModel)]="valueEnter"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                   {{valueEnter}}
+                </div>
+            </div>
+            <div class="table-rensive" *ngIf="showTable">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-success" (click)="toggleImage()"> Show Image</button>
+                            </th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let prod of products">
+                            <td><img [src]="prod.imageUrl" *ngIf="showImg"/></td>
+                            <td>{{prod.productName | uppercase}}</td>
+                            <td>{{prod.productCode | lowercase}}</td>
+                            <td>{{prod.releaseDate}}</td>
+                            <td>{{prod.price | currency}}</td>
+                            <td>{{prod.starRating}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+</div>  
