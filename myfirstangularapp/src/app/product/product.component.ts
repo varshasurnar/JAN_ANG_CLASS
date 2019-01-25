@@ -3,14 +3,17 @@ import { templateJitUrl } from '@angular/compiler';
 
 @Component ({
     selector: 'app-prod',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    //styles : ['thead{color:purple}','h4{color:gray}']
+    styleUrls : ['./product.component.css']
 })
 
 export class ProductComponent{
     title: String ='Books List';
     valueEnter: String = 'Enter Text';
     showTable : Boolean =true;
-    showImg: Boolean = false;
+    showImg: Boolean = true;
+    imageWidth : Number = 50;
     products: any[]=[
         {'_id':'5a05dacc734d1d68d42d31f3',
         'productId':1,
