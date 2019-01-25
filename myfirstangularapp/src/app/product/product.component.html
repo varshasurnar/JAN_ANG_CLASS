@@ -34,10 +34,10 @@
                     <tbody>
                         <tr *ngFor="let prod of products">
                             <td><img [src]="prod.imageUrl" *ngIf="showImg"/></td>
-                            <td>{{prod.productName | myUpper}}</td>
-                            <td>{{prod.productCode | lowercase}}</td>
+                            <td>{{prod.productName | myUpper:'upper'}}</td>
+                            <td>{{prod.productCode |  myUpper:'lower'}}</td>
                             <td>{{prod.releaseDate}}</td>
-                            <td>{{prod.price | currency}}</td>
+                            <td>{{prod.price | discount : 5 | currency:'GBP'}}</td>
                             <td>{{prod.starRating}}</td>
                         </tr>
                     </tbody>

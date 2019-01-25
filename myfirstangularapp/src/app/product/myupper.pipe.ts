@@ -6,7 +6,12 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 export class MyPipe implements PipeTransform{
     transform(value: String, typev : String){
-        value = value.toUpperCase();
+        if(typev === 'upper'){
+            value = value.toUpperCase();
+        }else{
+            value = value.toLowerCase();
+        }
+       
         return value;
     }
 }

@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BooksDetails} from './books.component';
 import { ProductComponent } from './product/product.component';
 import { MyPipe } from './product/myupper.pipe';
+import { DIscountedPipe } from './product/discount.pipe';
 
 @NgModule ({
     //All tcoent and pipe
@@ -13,7 +14,8 @@ import { MyPipe } from './product/myupper.pipe';
         AppComponent,
         BooksDetails,
         ProductComponent,
-        MyPipe
+        MyPipe,
+        DIscountedPipe
     ],
     //All module
     imports: [
