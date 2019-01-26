@@ -1,7 +1,7 @@
 import {Component,OnInit} from '@angular/core';
 import { templateJitUrl } from '@angular/compiler';
 import { IProduct } from './product.model';
-import { ProductService } from './product.service';
+import { ProductService } from "./product.service";
 
 @Component ({
     selector: 'app-prod',
@@ -27,9 +27,9 @@ export class ProductComponent implements OnInit{
     OnDataReceive(message: String){
         this.title = '*****Product List*****'+ message;
     }
-    // initializatiom
-    ngOnInit() : void{
-        // object creation
-        this.products = this._productservice.getProducts();
+   
+  // for  consuming API
+    ngOnInit(): void {
+      this._productservice.getProducts().subscribe((data) => this.products = data);
     }
 }
