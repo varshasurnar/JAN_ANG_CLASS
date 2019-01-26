@@ -11,6 +11,9 @@ import { DIscountedPipe } from './product/discount.pipe';
 import { ProductSearch } from './product/productsearch.pipe';
 import { StartComponent } from './shared/star.component';
 import { ProductService } from './product/product.service';
+import {ProductDetailComponent} from './product/product_detail.component';
+import { OrderCromponent } from './orders/order.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule ({
     //All tcoent and pipe
@@ -21,7 +24,10 @@ import { ProductService } from './product/product.service';
         MyPipe,
         DIscountedPipe,
         ProductSearch,
-        StartComponent
+        StartComponent,
+        ProductDetailComponent,
+        OrderCromponent,
+        HomeComponent
     ],
     //All module
     imports: [
