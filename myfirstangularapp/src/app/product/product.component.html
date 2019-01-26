@@ -39,7 +39,9 @@
                             <td>{{prod.releaseDate}}</td>
                             <td [ngStyle]="{'background-color':prod.price<20?'teal':'orange'}">
                                 {{prod.price | discount : 5 | currency:'GBP'}}</td>
-                            <td>{{prod.starRating}}</td>
+                            <td>
+                                <app-star  [rating]="prod.starRating" (ratingClicked)="OnDataReceive($event)"></app-star>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
