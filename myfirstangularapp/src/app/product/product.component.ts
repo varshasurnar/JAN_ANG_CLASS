@@ -28,8 +28,12 @@ export class ProductComponent implements OnInit{
         this.title = '*****Product List*****'+ message;
     }
    
-  // for  consuming API
+  // for  consuming API calling observable
     ngOnInit(): void {
       this._productservice.getProducts().subscribe((data) => this.products = data);
-    }
+    } 
+    // for  consuming API Calling Promise
+   /* ngOnInit(): void {
+        this._productservice.getProducts().then((data) => this.products = data);
+    }*/
 }
