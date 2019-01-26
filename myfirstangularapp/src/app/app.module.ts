@@ -9,6 +9,7 @@ import { MyPipe } from './product/myupper.pipe';
 import { DIscountedPipe } from './product/discount.pipe';
 import { ProductSearch } from './product/productsearch.pipe';
 import { StartComponent } from './shared/star.component';
+import { ProductService } from './product/product.service';
 
 @NgModule ({
     //All tcoent and pipe
@@ -32,7 +33,9 @@ import { StartComponent } from './shared/star.component';
         AppComponent
     ],
     // All the services
-    providers: []
+    providers: [
+        ProductService
+    ]
 
 })
 
