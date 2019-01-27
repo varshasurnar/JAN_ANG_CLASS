@@ -14,6 +14,10 @@ import { ProductService } from './product/product.service';
 import {ProductDetailComponent} from './product/product_detail.component';
 import { OrderCromponent } from './orders/order.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './shared/notfound.component';
+
+import {RouterModule} from '@angular/router';
+
 
 @NgModule ({
     //All tcoent and pipe
@@ -27,12 +31,22 @@ import { HomeComponent } from './home/home.component';
         StartComponent,
         ProductDetailComponent,
         OrderCromponent,
-        HomeComponent
+        HomeComponent,
+        NotFoundComponent
     ],
     //All module
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path:'products', component:ProductComponent},
+            {path:'products/:id',component:ProductDetailComponent},
+            {path:'orders',component:OrderCromponent},
+            {path:'home',component:HomeComponent},
+            {path:'',redirectTo:'home',pathMatch:'full'},
+            {path:'**',component: NotFoundComponent}
+        ])
     ],
 
     //Only First component

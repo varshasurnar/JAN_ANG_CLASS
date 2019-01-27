@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 export class ProductService {
 
-    getProducts(): IProduct[] {
+  /*  getProducts(): IProduct[] {
         return[
             {'_id':'5a05dacc734d1d68d42d31f3',
             'productId':1,
@@ -40,14 +40,14 @@ export class ProductService {
             'imageUrl':'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
             }
         ];
-    } 
-   /* private _productUrl = 'https://ngproductsparam.herokuapp.com/api/getProductDetails';
+    } */
+    private _productUrl = 'https://ngproductsparam.herokuapp.com/api/getProductDetails';
 
     constructor(private _httpClient: HttpClient) {}
  // calling observable
     getProducts(): Observable<IProduct[]> {
         return this._httpClient.get<IProduct[]>(this._productUrl);
-    }*?
+    }
     // calling promise
    /* getProduct() : Promise<IProduct[]> {
         return this._httpClient.get(this._productUrl).toPromise().then((res) => res.json);

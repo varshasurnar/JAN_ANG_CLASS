@@ -27,14 +27,16 @@ export class ProductComponent implements OnInit{
     OnDataReceive(message: String){
         this.title = '*****Product List*****'+ message;
     }
-    ngOnInit() : void{
+    // using json script
+   /* ngOnInit() : void{
         // object creation
         this.products = this._productservice.getProducts();
-    }
-  // for  consuming API calling observable
-  /*  ngOnInit(): void {
-      this._productservice.getProducts().subscribe((data) => this.products = data);
     } */
+  // for  consuming API calling observable
+   ngOnInit(): void {
+      this._productservice.getProducts()
+      .subscribe((data) => this.products = data);
+    } 
     // for  consuming API Calling Promise
    /* ngOnInit(): void {
         this._productservice.getProducts().then((data) => this.products = data);
