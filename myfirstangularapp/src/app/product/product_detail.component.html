@@ -3,9 +3,10 @@
           Detail Page
     </div>
     <div class="panel-body">
-        <h1>{{name}}</h1>
-        <img [src]="imgUrl"/>
-        <h2>{{description}}</h2>
+        <h1>{{details[0].productName}}</h1>
+        <img [src]="details[0].imageUrl"/>
+        <h2>{{details[0].description}}</h2>
+        <button type="button" class="btn btn-danger" (click)="OnBack()"><<<Back</button>
     </div>
 
 </div>
