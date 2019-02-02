@@ -14,7 +14,7 @@ export class CustomerFormsComponent {
 
     hasCodeLangError : Boolean = false;
     //use model
-   // model = new Employee('John', 'aa', 'a@s.com', '12345678', true, 'female', 'Angular');
+//model = new Employee('John', 'aa', 'a@s.com', '12345678', true, 'female', 'Angular');
 
     model = new Employee();
     constructor(private _FormPosterService : FormPosterService ){}
@@ -30,6 +30,7 @@ export class CustomerFormsComponent {
 
     formSubmit(form:NgForm) : void {
         console.log(form.value);
-        this._FormPosterService.postEmployee(form.value);
+        this._FormPosterService.postEmployee(form.value)
+            .subscribe((res) => console.log('post to server : ',res)); 
     }
 }
