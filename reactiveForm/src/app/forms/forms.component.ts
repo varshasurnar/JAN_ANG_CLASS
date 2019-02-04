@@ -17,11 +17,22 @@ export class FormsComponent {
 //consuming model
     ngOnInit(): void {
         this.employeeForm = this.fb.group({
-            firstName : ['Varsha'],
-            lastName : ['Surnar']
+            firstName : [''],
+            lastName : [''],
+            email : ['']
         });
     }
     save() : void {
         console.log(this.employeeForm);
     }
+    // populate data
+
+    populateData() : void {
+        this.employeeForm.setValue({
+            firstName : 'Varsha',
+            lastName : 'Surnar',
+            email : 'v@d.com'
+        });
+    }
+    
 }
