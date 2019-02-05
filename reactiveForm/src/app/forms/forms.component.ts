@@ -17,9 +17,10 @@ export class FormsComponent {
 //consuming model
     ngOnInit(): void {
         this.employeeForm = this.fb.group({
-            firstName : ['', [Validators.required,Validators.minLength(5)]],
-            lastName : [''],
-            email : ['']
+            firstName : ['', [Validators.required, Validators.minLength(5)]],
+            lastName :  ['', [Validators.required, Validators.maxLength(8)]],
+            email :     ['', [Validators.required, Validators.pattern('^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')]],
+            phone: ['']
         });
     }
     save() : void {

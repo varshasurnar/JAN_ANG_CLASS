@@ -33,7 +33,10 @@
                 </div>
             </div>
             <br/><br/>
-            <div class="form-group">
+            <div class="form-group" 
+            [ngClass]="{'has-error':(employeeForm.get('lastName').touched || 
+                                   employeeForm.get('lastName').dirty) && 
+                                   employeeForm.get('lastName').valid}">
                     <label class="col-md-4">LastName</label>
                     <div class="col-md-8">
                             <input class="form-control"
@@ -42,6 +45,16 @@
                                 placeholder="Enter Your Last Name"
                                 formControlName="lastName"
                                 />
+                            <span class="help-block" *ngIf="(employeeForm.get('lastName').touched ||
+                                                            employeeForm.get('lastName').dirty) &&
+                                                            employeeForm.get('lastName').errors">
+                                <span *ngIf="employeeForm.get('lastName').errors.required">
+                                    Please Enter Last Name
+                                </span>
+                                <span *ngIf="employeeForm.get('lastName').errors.maxlength">
+                                     Maximum length is 8
+                                </span>
+                           </span>
                     </div>
             </div>
             <br/><br/>
@@ -54,8 +67,35 @@
                     placeholder="Enter your email"
                     formControlName="email"
                     />
+                    <span class="help-block" *ngIf="(employeeForm.get('email').touched ||
+                                                     employeeForm.get('email').dirty) &&
+                                                     employeeForm.get('email').valid">
+                        <span *ngIf="employeeForm.get('email').errors.required">
+                            Please Enter email
+                        </span>       
+                        <span *ngIf="employeeForm.get('email').errors.pattern">
+                            Please enter correct email
+                        </span>                                              
+
+                    </span>
                 </div>
             </div>
+            <br/><br/>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="phone">
+                    Phone
+                </label>
+                <div class="col-md-8">
+                        <input class="form-control"
+                        id="phone"
+                        type="text"
+                        placeholder="Enter Mobile Number"
+                        formCOntrolName ="phone"
+                        />
+                    </div>
+            </div>
+            <br/><br/>
+                
             <br/><br/>
             <div class="form-group">
                 <div class="col-md-4 col-md-offset-2">
